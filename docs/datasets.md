@@ -47,7 +47,20 @@ Future implementations will subclass `DatasetAdapter` to parse the following dat
 ## Current Implementations
 
 ### Snapshot Serengeti
-We provide a local-first `SnapshotSerengetiAdapter` that seeds the database with a small mock bundle of images for development and testing.
+We provide a local-first `SnapshotSerengetiAdapter` that seeds the database with a small bundle of genuine Snapshot Serengeti images derived from the live LILA BC Azure Blob.
+**Attribution & License**: Released under the [Creative Commons Attribution 4.0 International License (CC-BY 4.0)](https://creativecommons.org/licenses/by/4.0/) or public domain equivalent. Originally published via LILA BC and Zooniverse.
 
-**Attribution & License**: 
-The Snapshot Serengeti sample images used in this project are derived from the Snapshot Serengeti dataset, which is released under the [Creative Commons Attribution 4.0 International License (CC-BY 4.0)](https://creativecommons.org/licenses/by/4.0/) or public domain equivalent. Originally published via LILA BC and Zooniverse.
+### BirdCLEF
+We provide a `BirdClefAdapter` that seeds genuine audio files sourced directly from Xeno-canto contributors. 
+**Attribution & License**: Audio recordings are provided by individual contributors to Xeno-canto. Specific licenses vary by recording (frequently CC-BY-NC-SA or CC-BY-NC).
+
+### iNaturalist
+We provide an `INaturalistAdapter` that pulls genuine research-grade observations.
+**Attribution & License**: Data provided by the iNaturalist community. The specific sample data fetched in this seed bundle is licensed under **CC-BY-NC** by the original photographer.
+
+### GBIF
+We provide a `GbifAdapter` pulling genuine occurrence records.
+**Attribution & License**: Provided by GBIF publishers under CC0, CC-BY, or CC-BY-NC.
+
+### Animal Kingdom (DEFERRED)
+**Note**: The `AnimalKingdomAdapter` is currently **deferred**. The Animal Kingdom dataset requires downloading multi-gigabyte zip files hosted on Google Drive, which introduces authentication limits and manual extraction steps that are impractical for a lightweight automated sample seed script. It will be implemented in later stages.
