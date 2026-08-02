@@ -10,6 +10,7 @@ services:
       - "8000:8000"
     volumes:
       - ./backend:/app
+      - wildlife_uploads:/app/uploads
     environment:
       - POSTGRES_USER=${POSTGRES_USER}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
@@ -68,3 +69,4 @@ services:
 volumes:
   postgres_data:
   mongodb_data:
+  wildlife_uploads:

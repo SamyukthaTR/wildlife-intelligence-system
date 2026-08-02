@@ -23,7 +23,9 @@ export default function RegisterPage() {
     try {
       await api.post('/auth/register', formData);
       setSuccess(true);
-      setTimeout(() => router.push('/login'), 2000);
+      setTimeout(() => {
+        window.location.href = '/login';
+      }, 2000);
     } catch (err: any) {
       setError(err.response?.data?.detail || 'Failed to register.');
     }

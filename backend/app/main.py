@@ -4,6 +4,8 @@ from app.core.config import settings
 from app.modules.auth.router import router as auth_router
 from app.modules.users.router import router as users_router
 from app.modules.health.router import router as health_router
+from app.modules.monitoring.router import router as monitoring_router
+from app.modules.observations.router import router as observations_router
 
 app = FastAPI(
     title="Wildlife Population Intelligence System",
@@ -24,3 +26,5 @@ app.add_middleware(
 app.include_router(health_router, tags=["Health"])
 app.include_router(auth_router)
 app.include_router(users_router)
+app.include_router(monitoring_router)
+app.include_router(observations_router)

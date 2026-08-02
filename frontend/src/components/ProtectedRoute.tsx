@@ -16,16 +16,9 @@ export default function ProtectedRoute({ children, allowedRoles }: ProtectedRout
   useEffect(() => {
     if (!loading) {
       if (!user) {
-        router.push('/login');
+        window.location.href = '/login';
       } else if (allowedRoles && !allowedRoles.includes(user.role)) {
-        // Explicitly check role to prevent URL tampering
-        const dashboardRoutes: Record<RoleEnum, string> = {
-          'Wildlife Researcher': '/dashboards/researcher',
-          'Conservation Officer': '/dashboards/conservation-officer',
-          'Forest Department Officer': '/dashboards/forest-officer',
-          'Administrator': '/dashboards/admin',
-        };
-        router.push(dashboardRoutes[user.role]);
+        window.location.href = '/';
       }
     }
   }, [user, loading, router, allowedRoles]);
